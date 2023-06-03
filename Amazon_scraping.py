@@ -1,17 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 import numpy as np
-
-
-# In[12]:
-
 
 #function to extract the product title
 
@@ -79,13 +69,7 @@ def get_stock_info(soup):
         
     return stock_check
 
-    
-
-
-# In[18]:
-
-
-#main function
+    #main function
 
 if __name__ == '__main__':
     
@@ -133,16 +117,3 @@ if __name__ == '__main__':
     amazon_df['title'].replace('', np.nan, inplace=True)
     amazon_df = amazon_df.dropna(subset=['title'])
     amazon_df.to_csv("amazon_extracted_data.csv", header = True, index=False)
-
-
-# In[19]:
-
-
-amazon_df
-
-
-# In[ ]:
-
-
-
-
